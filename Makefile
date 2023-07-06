@@ -25,7 +25,8 @@ all : $(NAME)
 
 $(NAME) : $(OBJS)
 	@make -sC libft
-	@$(CC) $(CFLAGS) $(INCLUDES) -o $(NAME) $(OBJS) ./libft/libft.a
+	@make -sC minilibx-linux
+	$(CC) $(CFLAGS) $(INCLUDES) -o $(NAME) $(OBJS) ./libft/libft.a ./minilibx-linux/libmlx_Linux.a -lXext -lX11
 	@echo "Compilation completed"
 
 $(DIR)%.o : $(SRC)%.c | $(DIR)
@@ -39,6 +40,7 @@ $(DIR) :
 clean :
 	@echo "Deleting Objects and Dependencies"
 	@make fclean -sC libft
+	@make clean -sC minilibx-linux
 	@rm -rf $(DIR)
 
 fclean : clean
