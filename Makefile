@@ -3,7 +3,9 @@ CFLAGS = -Wall -Wextra -Werror -MMD -g3
 
 HEADERS = so_long.h
 
-SOURCES = main.c
+SOURCES = main.c \
+		parsing_map.c \
+		error.c
 
 SRC = srcs/
 DIR = objs_deps/

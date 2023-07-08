@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 09:39:06 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/06 13:02:42 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/08 10:56:26 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,11 @@ typedef struct s_mlx
 	int		len_w_y;
 	char	*path_case_img;
 }	t_mlx;
+
+char	**parsing_map(int argc, char *argv[]);
+
+void	free_mat(char **mat);
+void	ft_lstclear_content(t_list **lst);
+void	error_malloc_list(t_list *list);
 
 #endif
