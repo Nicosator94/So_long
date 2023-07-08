@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 09:42:01 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/08 06:34:16 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/08 08:00:32 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	main(int argc, char *argv[])
 	int		case_x = 0;
 	int		case_y = 0;
 
-	mlx.path_case_img = "./image/among6.xpm";
+	mlx.path_case_img = "./image/neon_1.xpm";
 	mlx.mlx = mlx_init();
 	init_map(&mlx, argv[argc - 1]);
 	mlx.win = mlx_new_window(mlx.mlx, mlx.len_w_x, mlx.len_w_y, "So_long");
