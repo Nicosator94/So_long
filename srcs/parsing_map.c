@@ -5,119 +5,78 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/08 08:40:17 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/08 11:00:19 by niromano         ###   ########.fr       */
+/*   Created: 2023/07/08 19:16:43 by niromano          #+#    #+#             */
+/*   Updated: 2023/07/08 21:07:05 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-void	check_ext(char *file_name)
+void	check_rectangle(char **map)
 {
-	char	**mat;
-	int		i;
+	int	i;
+	int	len;
 
-	i = 0;
-	mat = ft_split(file_name, '.');
-	if (mat == NULL)
+	i = 1;
+	len = ft_strlen(map[0]);
+	while (map[i] != NULL)
 	{
-		ft_putstr_fd("Error malloc\n", 2);
-		exit(EXIT_FAILURE);
-	}
-	while (mat[i + 1] != NULL)
-		i ++;
-	if (ft_strncmp(mat[i], "ber", 4) != 0)
-	{
-		ft_putstr_fd("Extension de map incorrect\n", 2);
-		free_mat(mat);
-		exit(EXIT_FAILURE);
-	}
-	free_mat(mat);
-}
-
-t_list	*init_temp_list(int map)
-{
-	t_list	*temp_list;
-	t_list	*temp;
-	char	*s;
-
-	s = get_next_line(map);
-	if (s != NULL)
-	{
-		temp_list = ft_lstnew(ft_strdup(s));
-		if (temp_list->content == NULL)
-			error_malloc_list(temp_list);
-	}
-	while (s != NULL)
-	{
-		free(s);
-		s = get_next_line(map);
-		if (s != NULL)
+		if (map[i + 1] == NULL)
+			len -= 1;
+		if (len != (int)ft_strlen(map[i]))
 		{
-			temp = ft_lstnew(ft_strdup(s));
-			if (temp == NULL)
-				error_malloc_list(temp_list);
-			ft_lstadd_back(&temp_list, temp);
+			ft_putstr_fd("The map isn't a rectangle !\n", 2);
+			free_mat(map);
+			exit(EXIT_FAILURE);
 		}
-	}
-	return (temp_list);
-}
-
-char	**fill_line_to_mat(t_list *temp_list)
-{
-	t_list	*start_list;
-	char	**all_line;
-	int		i;
-
-	i = 0;
-	start_list = temp_list;
-	all_line = malloc(sizeof(char *) * (ft_lstsize(start_list) + 1));
-	if (all_line == NULL)
-		error_malloc_list(start_list);
-	while (temp_list != NULL)
-	{
-		all_line[i] = ft_strdup(temp_list->content);
-		if (all_line[i] == NULL)
-		{
-			free_mat(all_line);
-			error_malloc_list(start_list);
-		}
-		temp_list = temp_list->next;
 		i ++;
 	}
-	ft_lstclear_content(&start_list);
-	all_line[i] = NULL;
-	return (all_line);
 }
 
-char	**get_line(char *file_name)
+void	error_for_not_close_map(char **map, int trigger)
 {
-	t_list	*temp_list;
-	char	**all_line;
-	int		map;
-
-	map = open(file_name, O_RDONLY);
-	if (map == -1)
-	{
-		ft_putstr_fd("Echec de lecture\n", 2);
-		exit(EXIT_FAILURE);
-	}
-	temp_list = init_temp_list(map);
-	all_line = fill_line_to_mat(temp_list);
-	close(map);
-	return (all_line);
+	if (trigger == 1)
+		ft_putstr_fd("The map is not closed at the top !\n", 2);
+	else if (trigger == 2)
+		ft_putstr_fd("The map is not closed on the left !\n", 2);
+	else if (trigger == 3)
+		ft_putstr_fd("The map is not closed on the right !\n", 2);
+	else if (trigger == 4)
+		ft_putstr_fd("The map is not closed at the bottom !\n", 2);
+	free_mat(map);
+	exit(EXIT_FAILURE);
 }
 
-char	**parsing_map(int argc, char *argv[])
+void	check_close(char **map)
 {
-	char	**all_line;
-	
-	if (argc < 2)
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (map[0][j] != '\n')
 	{
-		ft_putstr_fd("Insérez une map dans les arguments !\n", 2);
-		exit(EXIT_FAILURE);
+		if (map[0][j++] != '1')
+			error_for_not_close_map(map, 1);
 	}
-	check_ext(argv[1]);
-	all_line = get_line(argv[1]);
-	return (all_line);
+	while (map[i + 1] != NULL)
+	{
+		if (map[i][0] != '1')
+			error_for_not_close_map(map, 2);
+		if (map[i][ft_strlen(map[i]) - 2] != '1')
+			error_for_not_close_map(map, 3);
+		i ++;
+	}
+	j = 0;
+	while (map[i][j] != '\0')
+	{
+		if (map[i][j++] != '1')
+			error_for_not_close_map(map, 4);
+	}
+}
+
+void	parsing_map(char **map)
+{
+	check_rectangle(map);
+	check_close(map);
 }

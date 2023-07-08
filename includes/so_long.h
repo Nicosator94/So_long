@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 09:39:06 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/08 10:56:26 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/08 21:09:57 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,13 @@ typedef struct s_mlx
 	char	*path_case_img;
 }	t_mlx;
 
-char	**parsing_map(int argc, char *argv[]);
+typedef struct s_data
+{
+	int	i;
+}	t_data;
+
+char	**init_all_line(int argc, char *argv[]);
+void	parsing_map(char **map);
 
 void	free_mat(char **mat);
 void	ft_lstclear_content(t_list **lst);

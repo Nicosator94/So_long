@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 09:22:59 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/08 10:54:42 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/08 19:39:44 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	free_mat(char **mat)
 
 void	error_malloc_list(t_list *list)
 {
-	ft_putstr_fd("Error Malloc\n", 2);
+	ft_putstr_fd("Malloc failed !\n", 2);
 	ft_lstclear_content(&list);
 	exit(EXIT_FAILURE);
 }
