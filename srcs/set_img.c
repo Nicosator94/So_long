@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 15:57:55 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/10 22:45:29 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/10 23:18:16 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	set_img(t_mlx *mlx)
 	mlx->img_p = mlx_xpm_file_to_image(mlx->mlx, path, &x, &y);
 	if (mlx->img_p == NULL)
 		ft_printf("Image Failed\n");
-	path = "./image/jaune.xpm";
+	path = "./image/orb.xpm";
 	mlx->img_c = mlx_xpm_file_to_image(mlx->mlx, path, &x, &y);
 	if (mlx->img_c == NULL)
 		ft_printf("Image Failed\n");
