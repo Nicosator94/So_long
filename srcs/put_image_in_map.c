@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 15:51:22 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/10 16:59:26 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/10 22:47:11 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,6 @@ void	put_image_in_case(t_mlx *mlx, int i, int j)
 
 	case_y = i * 60;
 	case_x = j * 60;
-	ft_printf("%d - %d\n", case_x, case_y);
-	ft_printf("chara : %c\n", mlx->map[i][j]);
-	ft_printf("\n");
 	if (mlx->map[i][j] == '0')
 		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img_0, case_x, case_y);
 	else if (mlx->map[i][j] == '1')
