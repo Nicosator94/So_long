@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 19:16:43 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/10 13:38:53 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/10 15:01:38 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ void	error_map(char **map, int trigger)
 		ft_putstr_fd("The map contains insufficient player spawn !\n", 2);
 	else if (trigger == 8)
 		ft_putstr_fd("The map does not contain any collectibles !\n", 2);
+	else if (trigger == 9)
+		ft_putstr_fd("The map can't be finished !\n", 2);
 	free_mat(map);
 	exit(EXIT_FAILURE);
 }
