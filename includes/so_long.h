@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 09:39:06 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/10 15:47:50 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/10 16:33:58 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,14 @@ typedef struct s_mlx
 {
 	void	*mlx;
 	void	*win;
-	void	*img;
+	void	*img_0;
+	void	*img_1;
+	void	*img_p;
+	void	*img_c;
+	void	*img_e;
 	int		len_w_x;
 	int		len_w_y;
-	char	*path_case_img;
+	char	**map;
 }	t_mlx;
 
 typedef struct s_data
@@ -40,6 +44,9 @@ void	check_escape(char **map);
 void	check_player(char **map);
 void	check_collectibles(char **map);
 void	check_if_possible_to_end(char **map);
+
+void	set_img(t_mlx *mlx);
+void	put_image_in_map(t_mlx *mlx);
 
 void	free_mat(char **mat);
 void	ft_lstclear_content(t_list **lst);
