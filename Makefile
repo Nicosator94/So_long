@@ -6,6 +6,8 @@ HEADERS = so_long.h
 SOURCES = main.c \
 		init_all_line.c \
 		parsing_map.c \
+		parsing_map_2.c \
+		check_if_possible_to_end.c \
 		error.c
 
 SRC = srcs/
