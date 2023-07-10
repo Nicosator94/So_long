@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 09:39:06 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/10 13:40:37 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/10 15:47:50 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,6 @@ void	check_if_possible_to_end(char **map);
 void	free_mat(char **mat);
 void	ft_lstclear_content(t_list **lst);
 void	error_malloc_list(t_list *list);
+void	error_malloc_matrix(char **temp, char **map);
 
 #endif

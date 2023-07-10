@@ -6,20 +6,11 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 13:39:01 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/10 15:46:44 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/10 15:47:32 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
-
-void	error_malloc_matrix(char **temp, char **map)
-{
-	if (temp != NULL)
-		free_mat(temp);
-	free_mat(map);
-	ft_putstr_fd("Malloc failed !\n", 2);
-	exit(EXIT_FAILURE);
-}
 
 char	**create_temp_map(char **map)
 {
