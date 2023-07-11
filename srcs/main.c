@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 09:42:01 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/11 09:39:39 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/11 16:20:53 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	clear_all(t_mlx *mlx)
 {
 	mlx_destroy_image(mlx->mlx, mlx->img_0);
 	mlx_destroy_image(mlx->mlx, mlx->img_1);
+	mlx_destroy_image(mlx->mlx, mlx->img_2);
 	mlx_destroy_image(mlx->mlx, mlx->img_p);
 	mlx_destroy_image(mlx->mlx, mlx->img_c);
 	mlx_destroy_image(mlx->mlx, mlx->img_e);
@@ -31,13 +32,13 @@ int	input(int key, t_mlx *mlx)
 {
 	if (key == XK_Escape)
 		clear_all(mlx);
-	if (key == 'w')
+	if (key == 'w' || key == 'z' || key == XK_Up)
 		move_w(mlx);
-	if (key == 'a')
+	if (key == 'a' || key == 'q' || key == XK_Left)
 		move_a(mlx);
-	if (key == 's')
+	if (key == 's' || key == XK_Down)
 		move_s(mlx);
-	if (key == 'd')
+	if (key == 'd' || key == XK_Right)
 		move_d(mlx);
 	return (0);
 }
@@ -57,6 +58,26 @@ void	init_map(t_mlx *mlx)
 		error_len_of_map(mlx);
 }
 
+void	border_map(char **map)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (map[0][j] != '\n')
+		map[0][j++] = '2';
+	while (map[i + 1] != NULL)
+	{
+		map[i][0] = '2';
+		map[i][ft_strlen(map[i]) - 2] = '2';
+		i ++;
+	}
+	j = 0;
+	while (map[i][j] != '\0')
+		map[i][j++] = '2';
+}
+
 int	main(int argc, char *argv[])
 {
 	t_mlx	mlx;
@@ -70,6 +91,7 @@ int	main(int argc, char *argv[])
 
 	mlx.map = init_all_line(argc, argv);
 	parsing_map(mlx.map);
+	border_map(mlx.map);
 	mlx.mlx = mlx_init();
 	init_map(&mlx);
 	mlx.win = mlx_new_window(mlx.mlx, mlx.len_w_x, mlx.len_w_y, "So_long");

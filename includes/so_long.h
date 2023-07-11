@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 09:39:06 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/11 09:38:55 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/11 16:11:22 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_mlx
 	void	*win;
 	void	*img_0;
 	void	*img_1;
+	void	*img_2;
 	void	*img_p;
 	void	*img_c;
 	void	*img_e;
