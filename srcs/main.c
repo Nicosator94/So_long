@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 09:42:01 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/11 07:40:40 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/11 07:47:44 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,27 +54,18 @@ void	error_len_of_map(t_mlx *mlx)
 	exit(EXIT_FAILURE);
 }
 
-void	init_map(t_mlx *mlx, char *map)
+void	init_map(t_mlx *mlx)
 {
-	char	*s;
-	int		fd;
-	int		x;
-	int		y;
+	int	x;
+	int	y;
 
-	fd = open(map, O_RDONLY);
-	s = get_next_line(fd);
-	x = ft_strlen(s) - 1;
+	x = ft_strlen(mlx->map[0]) - 1;
 	y = 0;
-	while (s != NULL)
-	{
+	while (mlx->map[y] != NULL)
 		y ++;
-		free(s);
-		s = get_next_line(fd);
-	}
 	mlx->len_w_x = x * 60;
 	mlx->len_w_y = y * 60;
-	close(fd);
-	if (x > 32 || y > 16)
+	if (mlx->len_w_x > 1920 || mlx->len_w_y > 1020)
 		error_len_of_map(mlx);
 }
 
@@ -85,7 +76,7 @@ int	main(int argc, char *argv[])
 	mlx.map = init_all_line(argc, argv);
 	parsing_map(mlx.map);
 	mlx.mlx = mlx_init();
-	init_map(&mlx, argv[argc - 1]);
+	init_map(&mlx);
 	mlx.win = mlx_new_window(mlx.mlx, mlx.len_w_x, mlx.len_w_y, "So_long");
 	set_img(&mlx);
 	put_image_in_map(&mlx);
