@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 09:42:01 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/10 22:55:25 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/11 07:40:40 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,15 @@ int	input_nothing(t_mlx *mlx)
 	return (0);
 }
 
+void	error_len_of_map(t_mlx *mlx)
+{
+	ft_putstr_fd("The map is too big !\n", 2);
+	mlx_destroy_display(mlx->mlx);
+	free(mlx->mlx);
+	free_mat(mlx->map);
+	exit(EXIT_FAILURE);
+}
+
 void	init_map(t_mlx *mlx, char *map)
 {
 	char	*s;
@@ -65,6 +74,8 @@ void	init_map(t_mlx *mlx, char *map)
 	mlx->len_w_x = x * 60;
 	mlx->len_w_y = y * 60;
 	close(fd);
+	if (x > 32 || y > 16)
+		error_len_of_map(mlx);
 }
 
 int	main(int argc, char *argv[])
