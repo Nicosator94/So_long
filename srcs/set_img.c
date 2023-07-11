@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 15:57:55 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/11 07:14:52 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/11 07:57:19 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 void	set_img(t_mlx *mlx)
 {
 	char	*path;
-	int		x = 0;
-	int		y = 0;
+	int		x;
+	int		y;
 
 	path = "./image/jaune.xpm";
 	mlx->img_0 = mlx_xpm_file_to_image(mlx->mlx, path, &x, &y);

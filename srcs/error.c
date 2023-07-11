@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 09:22:59 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/10 15:47:39 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/11 07:52:33 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,14 @@ void	error_malloc_matrix(char **temp, char **map)
 		free_mat(temp);
 	free_mat(map);
 	ft_putstr_fd("Malloc failed !\n", 2);
+	exit(EXIT_FAILURE);
+}
+
+void	error_len_of_map(t_mlx *mlx)
+{
+	ft_putstr_fd("The map is too big !\n", 2);
+	mlx_destroy_display(mlx->mlx);
+	free(mlx->mlx);
+	free_mat(mlx->map);
 	exit(EXIT_FAILURE);
 }

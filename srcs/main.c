@@ -6,31 +6,13 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 09:42:01 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/11 07:47:44 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/11 09:39:39 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-int	input(int key, t_mlx *mlx)
-{
-	if (key == XK_Escape)
-	{
-		mlx_destroy_image(mlx->mlx, mlx->img_0);
-		mlx_destroy_image(mlx->mlx, mlx->img_1);
-		mlx_destroy_image(mlx->mlx, mlx->img_p);
-		mlx_destroy_image(mlx->mlx, mlx->img_c);
-		mlx_destroy_image(mlx->mlx, mlx->img_e);
-		mlx_destroy_window(mlx->mlx, mlx->win);
-		mlx_destroy_display(mlx->mlx);
-		free(mlx->mlx);
-		free_mat(mlx->map);
-		exit(EXIT_SUCCESS);
-	}
-	return (0);
-}
-
-int	input_nothing(t_mlx *mlx)
+int	clear_all(t_mlx *mlx)
 {
 	mlx_destroy_image(mlx->mlx, mlx->img_0);
 	mlx_destroy_image(mlx->mlx, mlx->img_1);
@@ -45,13 +27,19 @@ int	input_nothing(t_mlx *mlx)
 	return (0);
 }
 
-void	error_len_of_map(t_mlx *mlx)
+int	input(int key, t_mlx *mlx)
 {
-	ft_putstr_fd("The map is too big !\n", 2);
-	mlx_destroy_display(mlx->mlx);
-	free(mlx->mlx);
-	free_mat(mlx->map);
-	exit(EXIT_FAILURE);
+	if (key == XK_Escape)
+		clear_all(mlx);
+	if (key == 'w')
+		move_w(mlx);
+	if (key == 'a')
+		move_a(mlx);
+	if (key == 's')
+		move_s(mlx);
+	if (key == 'd')
+		move_d(mlx);
+	return (0);
 }
 
 void	init_map(t_mlx *mlx)
@@ -73,6 +61,13 @@ int	main(int argc, char *argv[])
 {
 	t_mlx	mlx;
 
+	// DATA
+	mlx.p_x = 1;
+	mlx.p_y = 1;
+	mlx.spike_x = 7;
+	mlx.spike_y = 1;
+	mlx.collectibles = 5;
+
 	mlx.map = init_all_line(argc, argv);
 	parsing_map(mlx.map);
 	mlx.mlx = mlx_init();
@@ -81,7 +76,7 @@ int	main(int argc, char *argv[])
 	set_img(&mlx);
 	put_image_in_map(&mlx);
 	mlx_hook(mlx.win, KeyPress, KeyPressMask, input, &mlx);
-	mlx_hook(mlx.win, 17, 0, input_nothing, &mlx);
+	mlx_hook(mlx.win, 17, 0, clear_all, &mlx);
 	mlx_loop(mlx.mlx);
 	return (0);
 }

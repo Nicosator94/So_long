@@ -10,6 +10,7 @@ SOURCES = main.c \
 		check_if_possible_to_end.c \
 		set_img.c \
 		put_image_in_map.c \
+		move.c \
 		error.c
 
 SRC = srcs/

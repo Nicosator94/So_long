@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 13:39:01 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/10 15:47:32 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/11 07:59:39 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	check_end(char **temp, char **map)
 {
 	int	i;
 	int	j;
-	
+
 	i = 0;
 	j = 0;
 	while (temp[i] != NULL)
@@ -63,7 +63,7 @@ int	fill_player(char **map, int i, int j)
 	int	trigger;
 
 	trigger = 0;
-	if (map[i - 1][j] == '0' ||map[i - 1][j] == 'C' || map[i - 1][j] == 'E')
+	if (map[i - 1][j] == '0' || map[i - 1][j] == 'C' || map[i - 1][j] == 'E')
 	{
 		map[i - 1][j] = 'P';
 		trigger = 1;
@@ -102,7 +102,7 @@ void	fill_temp_map(char **temp)
 				if (fill_player(temp, i, j) == 1)
 				{
 					i = 0;
-					break;
+					break ;
 				}
 			}
 			j ++;

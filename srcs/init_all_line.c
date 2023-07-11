@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 08:40:17 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/08 19:39:29 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/11 07:59:06 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ char	**get_line(char *file_name)
 char	**init_all_line(int argc, char *argv[])
 {
 	char	**all_line;
-	
+
 	if (argc < 2)
 	{
 		ft_putstr_fd("Insert a map in the arguments !\n", 2);
