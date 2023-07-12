@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 09:42:01 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/12 07:46:28 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/12 10:28:14 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,11 +78,11 @@ void	border_map(char **map)
 		map[i][j++] = '2';
 }
 
-int	main(int argc, char *argv[])
+int	main(int argc, char *argv[], char **env)
 {
 	t_mlx	mlx;
 
-	check_img();
+	check_img(env);
 	mlx.map = init_all_line(argc, argv);
 	parsing_map(mlx.map);
 	border_map(mlx.map);
