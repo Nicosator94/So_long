@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 15:57:55 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/12 10:26:47 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/12 17:02:31 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,6 @@ void	set_img(t_mlx *mlx)
 	mlx->img_c = mlx_xpm_file_to_image(mlx->mlx, path, &x, &y);
 	path = "./image/spike.xpm";
 	mlx->img_e = mlx_xpm_file_to_image(mlx->mlx, path, &x, &y);
+	path = "./image/counter.xpm";
+	mlx->img_counter = mlx_xpm_file_to_image(mlx->mlx, path, &x, &y);
 }

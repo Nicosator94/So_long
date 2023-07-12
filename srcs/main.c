@@ -6,32 +6,16 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 09:42:01 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/12 10:28:14 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/12 18:08:29 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-int	clear_all(t_mlx *mlx)
-{
-	mlx_destroy_image(mlx->mlx, mlx->img_0);
-	mlx_destroy_image(mlx->mlx, mlx->img_1);
-	mlx_destroy_image(mlx->mlx, mlx->img_2);
-	mlx_destroy_image(mlx->mlx, mlx->img_p);
-	mlx_destroy_image(mlx->mlx, mlx->img_c);
-	mlx_destroy_image(mlx->mlx, mlx->img_e);
-	mlx_destroy_window(mlx->mlx, mlx->win);
-	mlx_destroy_display(mlx->mlx);
-	free(mlx->mlx);
-	free_mat(mlx->map);
-	exit(EXIT_SUCCESS);
-	return (0);
-}
-
 int	input(int key, t_mlx *mlx)
 {
 	if (key == XK_Escape)
-		clear_all(mlx);
+		clear_all_success(mlx);
 	if (key == 'w' || key == 'z' || key == XK_Up)
 		move_w(mlx);
 	if (key == 'a' || key == 'q' || key == XK_Left)
@@ -93,7 +77,7 @@ int	main(int argc, char *argv[], char **env)
 	set_img(&mlx);
 	put_image_in_map(&mlx);
 	mlx_hook(mlx.win, KeyPress, KeyPressMask, input, &mlx);
-	mlx_hook(mlx.win, 17, 0, clear_all, &mlx);
+	mlx_hook(mlx.win, 17, 0, clear_all_success, &mlx);
 	mlx_loop(mlx.mlx);
 	return (0);
 }

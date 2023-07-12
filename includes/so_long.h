@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 09:39:06 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/12 10:28:34 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/12 18:10:29 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct s_mlx
 	void	*img_p;
 	void	*img_c;
 	void	*img_e;
+	void	*img_counter;
 	int		len_w_x;
 	int		len_w_y;
 	char	**map;
@@ -57,18 +58,21 @@ void	set_data(t_mlx *mlx);
 void	check_img(char **env);
 void	set_img(t_mlx *mlx);
 void	put_image_in_map(t_mlx *mlx);
+void	print_counter(t_mlx *mlx);
 
 void	move_w(t_mlx *mlx);
 void	move_a(t_mlx *mlx);
 void	move_s(t_mlx *mlx);
 void	move_d(t_mlx *mlx);
 
-int		clear_all(t_mlx *mlx);
+int		clear_all_success(t_mlx *mlx);
+int		clear_all_failure(t_mlx *mlx);
 
 void	free_mat(char **mat);
 void	ft_lstclear_content(t_list **lst);
 void	error_malloc_list(t_list *list);
 void	error_malloc_matrix(char **temp, char **map);
 void	error_len_of_map(t_mlx *mlx);
+void	error_malloc_all(t_mlx *mlx);
 
 #endif

@@ -12,8 +12,10 @@ SOURCES = main.c \
 		set_data.c \
 		set_img.c \
 		put_image_in_map.c \
+		print_counter.c \
 		move.c \
-		error.c
+		error.c \
+		clear_all.c
 
 SRC = srcs/
 DIR = objs_deps/
