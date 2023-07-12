@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 09:39:06 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/11 16:11:22 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/12 07:05:42 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void	check_player(char **map);
 void	check_collectibles(char **map);
 void	check_if_possible_to_end(char **map);
 
+void	check_img(void);
 void	set_img(t_mlx *mlx);
 void	put_image_in_map(t_mlx *mlx);
 

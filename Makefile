@@ -4,6 +4,7 @@ CFLAGS = -Wall -Wextra -Werror -MMD -g3
 HEADERS = so_long.h
 
 SOURCES = main.c \
+		check_img.c \
 		init_all_line.c \
 		parsing_map.c \
 		parsing_map_2.c \

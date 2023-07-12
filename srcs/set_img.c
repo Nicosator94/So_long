@@ -6,11 +6,27 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 15:57:55 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/11 16:57:45 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/12 06:54:16 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
+
+void	others_img(t_mlx *mlx, char *path, int x, int y)
+{
+	path = "./image/neon_1.xpm";
+	mlx->img_p = mlx_xpm_file_to_image(mlx->mlx, path, &x, &y);
+	if (mlx->img_p == NULL)
+		ft_printf("Image Failed\n");
+	path = "./image/orb.xpm";
+	mlx->img_c = mlx_xpm_file_to_image(mlx->mlx, path, &x, &y);
+	if (mlx->img_c == NULL)
+		ft_printf("Image Failed\n");
+	path = "./image/spike.xpm";
+	mlx->img_e = mlx_xpm_file_to_image(mlx->mlx, path, &x, &y);
+	if (mlx->img_e == NULL)
+		ft_printf("Image Failed\n");
+}
 
 void	set_img(t_mlx *mlx)
 {
@@ -30,16 +46,5 @@ void	set_img(t_mlx *mlx)
 	mlx->img_2 = mlx_xpm_file_to_image(mlx->mlx, path, &x, &y);
 	if (mlx->img_2 == NULL)
 		ft_printf("Image Failed\n");
-	path = "./image/neon_1.xpm";
-	mlx->img_p = mlx_xpm_file_to_image(mlx->mlx, path, &x, &y);
-	if (mlx->img_p == NULL)
-		ft_printf("Image Failed\n");
-	path = "./image/orb.xpm";
-	mlx->img_c = mlx_xpm_file_to_image(mlx->mlx, path, &x, &y);
-	if (mlx->img_c == NULL)
-		ft_printf("Image Failed\n");
-	path = "./image/spike.xpm";
-	mlx->img_e = mlx_xpm_file_to_image(mlx->mlx, path, &x, &y);
-	if (mlx->img_e == NULL)
-		ft_printf("Image Failed\n");
+	others_img(mlx, path, x, y);
 }

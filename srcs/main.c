@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 09:42:01 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/11 16:20:53 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/12 06:55:04 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ int	main(int argc, char *argv[])
 	mlx.spike_y = 1;
 	mlx.collectibles = 5;
 
+	check_img();
 	mlx.map = init_all_line(argc, argv);
 	parsing_map(mlx.map);
 	border_map(mlx.map);
