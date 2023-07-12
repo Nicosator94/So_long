@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 19:16:43 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/10 15:01:38 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/12 09:46:59 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	check_rectangle(char **map)
 			len -= 1;
 		if (len != (int)ft_strlen(map[i]))
 		{
+			ft_putstr_fd("Error\n", 2);
 			ft_putstr_fd("The map isn't a rectangle !\n", 2);
 			free_mat(map);
 			exit(EXIT_FAILURE);
@@ -35,6 +36,7 @@ void	check_rectangle(char **map)
 
 void	error_map(char **map, int trigger)
 {
+	ft_putstr_fd("Error\n", 2);
 	if (trigger == 1)
 		ft_putstr_fd("The map is not closed at the top !\n", 2);
 	else if (trigger == 2)

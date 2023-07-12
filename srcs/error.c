@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 09:22:59 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/11 07:52:33 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/12 09:43:40 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	free_mat(char **mat)
 
 void	error_malloc_list(t_list *list)
 {
+	ft_putstr_fd("Error\n", 2);
 	ft_putstr_fd("Malloc failed !\n", 2);
 	ft_lstclear_content(&list);
 	exit(EXIT_FAILURE);
@@ -52,12 +53,14 @@ void	error_malloc_matrix(char **temp, char **map)
 	if (temp != NULL)
 		free_mat(temp);
 	free_mat(map);
+	ft_putstr_fd("Error\n", 2);
 	ft_putstr_fd("Malloc failed !\n", 2);
 	exit(EXIT_FAILURE);
 }
 
 void	error_len_of_map(t_mlx *mlx)
 {
+	ft_putstr_fd("Error\n", 2);
 	ft_putstr_fd("The map is too big !\n", 2);
 	mlx_destroy_display(mlx->mlx);
 	free(mlx->mlx);

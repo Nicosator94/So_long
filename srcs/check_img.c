@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 06:55:26 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/12 07:26:12 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/12 09:42:44 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	error_image(char *s)
 {
+	ft_putstr_fd("Error\n", 2);
 	ft_putstr_fd("Image \"", 2);
 	ft_putstr_fd(s, 2);
 	ft_putstr_fd("\" was not found !\n", 2);

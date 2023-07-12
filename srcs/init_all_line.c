@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 08:40:17 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/11 07:59:06 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/12 09:44:37 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	check_ext(char *file_name)
 	mat = ft_split(file_name, '.');
 	if (mat == NULL)
 	{
+		ft_putstr_fd("Error\n", 2);
 		ft_putstr_fd("Malloc failed !\n", 2);
 		exit(EXIT_FAILURE);
 	}
@@ -28,6 +29,7 @@ void	check_ext(char *file_name)
 		i ++;
 	if (ft_strncmp(mat[i], "ber", 4) != 0)
 	{
+		ft_putstr_fd("Error\n", 2);
 		ft_putstr_fd("Wrong map extension !\n", 2);
 		free_mat(mat);
 		exit(EXIT_FAILURE);
@@ -99,7 +101,8 @@ char	**get_line(char *file_name)
 	map = open(file_name, O_RDONLY);
 	if (map == -1)
 	{
-		ft_putstr_fd("Error : The file did not open !\n", 2);
+		ft_putstr_fd("Error\n", 2);
+		ft_putstr_fd("The file did not open !\n", 2);
 		exit(EXIT_FAILURE);
 	}
 	temp_list = init_temp_list(map);
@@ -112,9 +115,10 @@ char	**init_all_line(int argc, char *argv[])
 {
 	char	**all_line;
 
-	if (argc < 2)
+	if (argc != 2)
 	{
-		ft_putstr_fd("Insert a map in the arguments !\n", 2);
+		ft_putstr_fd("Error\n", 2);
+		ft_putstr_fd("Insert one map in the arguments !\n", 2);
 		exit(EXIT_FAILURE);
 	}
 	check_ext(argv[1]);
