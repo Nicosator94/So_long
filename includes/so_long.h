@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 09:39:06 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/12 07:05:42 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/12 07:53:55 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct s_mlx
 	int		collectibles;
 	int		spike_x;
 	int		spike_y;
+	int		nb_move;
 }	t_mlx;
 
 typedef struct s_data
@@ -50,6 +51,8 @@ void	check_escape(char **map);
 void	check_player(char **map);
 void	check_collectibles(char **map);
 void	check_if_possible_to_end(char **map);
+
+void	set_data(t_mlx *mlx);
 
 void	check_img(void);
 void	set_img(t_mlx *mlx);
