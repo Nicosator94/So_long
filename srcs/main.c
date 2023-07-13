@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 09:42:01 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/12 18:08:29 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/14 01:32:04 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,23 @@ void	border_map(char **map)
 		map[i][j++] = '2';
 }
 
+int	animation(t_mlx *mlx)
+{
+	int	x;
+	int	y;
+
+	x = mlx->p_x * 60;
+	y = mlx->p_y * 60;
+	if (mlx->timer == 0)
+		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img_p, x, y);
+	else if (mlx->timer == 2500)
+		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img_p_2, x, y);
+	mlx->timer ++;
+	if (mlx->timer > 5000)
+		mlx->timer = 0;
+	return (0);
+}
+
 int	main(int argc, char *argv[], char **env)
 {
 	t_mlx	mlx;
@@ -78,6 +95,7 @@ int	main(int argc, char *argv[], char **env)
 	put_image_in_map(&mlx);
 	mlx_hook(mlx.win, KeyPress, KeyPressMask, input, &mlx);
 	mlx_hook(mlx.win, 17, 0, clear_all_success, &mlx);
+	mlx_loop_hook(mlx.mlx, animation, &mlx);
 	mlx_loop(mlx.mlx);
 	return (0);
 }

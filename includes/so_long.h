@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 09:39:06 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/13 18:01:19 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/14 01:14:10 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct s_mlx
 	void	*img_1;
 	void	*img_2;
 	void	*img_p;
+	void	*img_p_2;
 	void	*img_c;
 	void	*img_e;
 	void	*img_e_o;
@@ -38,6 +39,7 @@ typedef struct s_mlx
 	int		spike_x;
 	int		spike_y;
 	int		nb_move;
+	int		timer;
 }	t_mlx;
 
 typedef struct s_data

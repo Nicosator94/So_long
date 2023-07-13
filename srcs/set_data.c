@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 07:32:19 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/13 17:39:48 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/14 01:14:21 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,4 +85,5 @@ void	set_data(t_mlx *mlx)
 	count_collectibles(mlx);
 	search_escape(mlx);
 	mlx->nb_move = 0;
+	mlx->timer = 0;
 }
