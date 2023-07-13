@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 09:39:06 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/13 17:09:30 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/13 18:01:19 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ void	set_data(t_mlx *mlx);
 void	check_img(char **env);
 void	set_img(t_mlx *mlx);
 void	put_image_in_map(t_mlx *mlx);
+void	spike_open(t_mlx *mlx);
+void	spike_close(t_mlx *mlx, int p_x, int p_y);
 void	print_counter(t_mlx *mlx);
 
 void	move_w(t_mlx *mlx);

@@ -12,6 +12,7 @@ SOURCES = main.c \
 		set_data.c \
 		set_img.c \
 		put_image_in_map.c \
+		replace_spike.c \
 		print_counter.c \
 		move.c \
 		error.c \
