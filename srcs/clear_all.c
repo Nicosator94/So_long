@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 18:08:11 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/12 18:10:21 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/13 17:11:35 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int	clear_all_success(t_mlx *mlx)
 	mlx_destroy_image(mlx->mlx, mlx->img_p);
 	mlx_destroy_image(mlx->mlx, mlx->img_c);
 	mlx_destroy_image(mlx->mlx, mlx->img_e);
+	mlx_destroy_image(mlx->mlx, mlx->img_e_o);
 	mlx_destroy_image(mlx->mlx, mlx->img_counter);
 	mlx_destroy_window(mlx->mlx, mlx->win);
 	mlx_destroy_display(mlx->mlx);
@@ -37,6 +38,7 @@ int	clear_all_failure(t_mlx *mlx)
 	mlx_destroy_image(mlx->mlx, mlx->img_p);
 	mlx_destroy_image(mlx->mlx, mlx->img_c);
 	mlx_destroy_image(mlx->mlx, mlx->img_e);
+	mlx_destroy_image(mlx->mlx, mlx->img_e_o);
 	mlx_destroy_image(mlx->mlx, mlx->img_counter);
 	mlx_destroy_window(mlx->mlx, mlx->win);
 	mlx_destroy_display(mlx->mlx);

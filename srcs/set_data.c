@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 07:32:19 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/12 07:55:57 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/13 17:14:43 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,8 @@ void	search_escape(t_mlx *mlx)
 		{
 			if (mlx->map[i][j] == 'P')
 			{
-				mlx->spike_x = j;
-				mlx->spike_y = i;
+				mlx->spike_x = i;
+				mlx->spike_y = j;
 			}
 			j ++;
 		}
