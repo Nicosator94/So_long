@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:00:24 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/13 18:00:52 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/15 01:06:54 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	spike_open(t_mlx *mlx)
 
 	x = (mlx->spike_x * 60);
 	y = (mlx->spike_y * 60);
-	mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img_e_o, x, y);
+	mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.e_o, x, y);
 }
 
 void	spike_close(t_mlx *mlx, int p_x, int p_y)
@@ -29,6 +29,6 @@ void	spike_close(t_mlx *mlx, int p_x, int p_y)
 
 	x = (mlx->spike_x * 60);
 	y = (mlx->spike_y * 60);
-	mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img_e, x, y);
+	mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.e_c, x, y);
 	mlx->map[p_y][p_x] = 'E';
 }

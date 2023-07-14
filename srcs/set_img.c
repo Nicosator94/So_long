@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 15:57:55 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/14 00:06:26 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/15 01:06:34 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,21 @@ void	set_img(t_mlx *mlx)
 	int		y;
 
 	path = "./image/ground.xpm";
-	mlx->img_0 = mlx_xpm_file_to_image(mlx->mlx, path, &x, &y);
+	mlx->img.gro = mlx_xpm_file_to_image(mlx->mlx, path, &x, &y);
 	path = "./image/box.xpm";
-	mlx->img_1 = mlx_xpm_file_to_image(mlx->mlx, path, &x, &y);
+	mlx->img.box = mlx_xpm_file_to_image(mlx->mlx, path, &x, &y);
 	path = "./image/wall.xpm";
-	mlx->img_2 = mlx_xpm_file_to_image(mlx->mlx, path, &x, &y);
+	mlx->img.wal = mlx_xpm_file_to_image(mlx->mlx, path, &x, &y);
 	path = "./image/neon_1.xpm";
-	mlx->img_p = mlx_xpm_file_to_image(mlx->mlx, path, &x, &y);
+	mlx->img.p_1 = mlx_xpm_file_to_image(mlx->mlx, path, &x, &y);
 	path = "./image/neon_2.xpm";
-	mlx->img_p_2 = mlx_xpm_file_to_image(mlx->mlx, path, &x, &y);
+	mlx->img.p_2 = mlx_xpm_file_to_image(mlx->mlx, path, &x, &y);
 	path = "./image/orb.xpm";
-	mlx->img_c = mlx_xpm_file_to_image(mlx->mlx, path, &x, &y);
+	mlx->img.o_1 = mlx_xpm_file_to_image(mlx->mlx, path, &x, &y);
 	path = "./image/spike.xpm";
-	mlx->img_e = mlx_xpm_file_to_image(mlx->mlx, path, &x, &y);
+	mlx->img.e_c = mlx_xpm_file_to_image(mlx->mlx, path, &x, &y);
 	path = "./image/spike_o.xpm";
-	mlx->img_e_o = mlx_xpm_file_to_image(mlx->mlx, path, &x, &y);
+	mlx->img.e_o = mlx_xpm_file_to_image(mlx->mlx, path, &x, &y);
 	path = "./image/counter.xpm";
-	mlx->img_counter = mlx_xpm_file_to_image(mlx->mlx, path, &x, &y);
+	mlx->img.counter = mlx_xpm_file_to_image(mlx->mlx, path, &x, &y);
 }

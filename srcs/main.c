@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 09:42:01 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/14 01:32:04 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/15 01:05:31 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,9 +70,9 @@ int	animation(t_mlx *mlx)
 	x = mlx->p_x * 60;
 	y = mlx->p_y * 60;
 	if (mlx->timer == 0)
-		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img_p, x, y);
+		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.p_1, x, y);
 	else if (mlx->timer == 2500)
-		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img_p_2, x, y);
+		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.p_2, x, y);
 	mlx->timer ++;
 	if (mlx->timer > 5000)
 		mlx->timer = 0;

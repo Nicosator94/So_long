@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 18:00:58 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/12 18:14:04 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/15 01:02:10 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	print_counter(t_mlx *mlx)
 {
 	char	*nb;
 
-	mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img_counter, 5, 5);
+	mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.counter, 5, 5);
 	mlx_string_put(mlx->mlx, mlx->win, 15, 25, 0xFFFFFF, "Number of steps :");
 	mlx_string_put(mlx->mlx, mlx->win, 15, 45, 0xFFFFFF, "Remaining Orbs :");
 	nb = ft_itoa(mlx->nb_move);

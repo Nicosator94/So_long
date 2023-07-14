@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 18:08:11 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/14 00:09:53 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/15 01:05:12 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 int	clear_all_success(t_mlx *mlx)
 {
-	mlx_destroy_image(mlx->mlx, mlx->img_0);
-	mlx_destroy_image(mlx->mlx, mlx->img_1);
-	mlx_destroy_image(mlx->mlx, mlx->img_2);
-	mlx_destroy_image(mlx->mlx, mlx->img_p);
-	mlx_destroy_image(mlx->mlx, mlx->img_p_2);
-	mlx_destroy_image(mlx->mlx, mlx->img_c);
-	mlx_destroy_image(mlx->mlx, mlx->img_e);
-	mlx_destroy_image(mlx->mlx, mlx->img_e_o);
-	mlx_destroy_image(mlx->mlx, mlx->img_counter);
+	mlx_destroy_image(mlx->mlx, mlx->img.gro);
+	mlx_destroy_image(mlx->mlx, mlx->img.box);
+	mlx_destroy_image(mlx->mlx, mlx->img.wal);
+	mlx_destroy_image(mlx->mlx, mlx->img.p_1);
+	mlx_destroy_image(mlx->mlx, mlx->img.p_2);
+	mlx_destroy_image(mlx->mlx, mlx->img.o_1);
+	mlx_destroy_image(mlx->mlx, mlx->img.e_c);
+	mlx_destroy_image(mlx->mlx, mlx->img.e_o);
+	mlx_destroy_image(mlx->mlx, mlx->img.counter);
 	mlx_destroy_window(mlx->mlx, mlx->win);
 	mlx_destroy_display(mlx->mlx);
 	free(mlx->mlx);
@@ -33,15 +33,15 @@ int	clear_all_success(t_mlx *mlx)
 
 int	clear_all_failure(t_mlx *mlx)
 {
-	mlx_destroy_image(mlx->mlx, mlx->img_0);
-	mlx_destroy_image(mlx->mlx, mlx->img_1);
-	mlx_destroy_image(mlx->mlx, mlx->img_2);
-	mlx_destroy_image(mlx->mlx, mlx->img_p);
-	mlx_destroy_image(mlx->mlx, mlx->img_p_2);
-	mlx_destroy_image(mlx->mlx, mlx->img_c);
-	mlx_destroy_image(mlx->mlx, mlx->img_e);
-	mlx_destroy_image(mlx->mlx, mlx->img_e_o);
-	mlx_destroy_image(mlx->mlx, mlx->img_counter);
+	mlx_destroy_image(mlx->mlx, mlx->img.gro);
+	mlx_destroy_image(mlx->mlx, mlx->img.box);
+	mlx_destroy_image(mlx->mlx, mlx->img.wal);
+	mlx_destroy_image(mlx->mlx, mlx->img.p_1);
+	mlx_destroy_image(mlx->mlx, mlx->img.p_2);
+	mlx_destroy_image(mlx->mlx, mlx->img.o_1);
+	mlx_destroy_image(mlx->mlx, mlx->img.e_c);
+	mlx_destroy_image(mlx->mlx, mlx->img.e_o);
+	mlx_destroy_image(mlx->mlx, mlx->img.counter);
 	mlx_destroy_window(mlx->mlx, mlx->win);
 	mlx_destroy_display(mlx->mlx);
 	free(mlx->mlx);

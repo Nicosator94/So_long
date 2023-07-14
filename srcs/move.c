@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 08:43:12 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/13 18:00:50 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/15 01:05:52 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ void	move_w(t_mlx *mlx)
 				spike_open(mlx);
 		}
 		mlx->map[mlx->p_y][mlx->p_x] = '0';
-		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img_0, mlx->p_x * 60, mlx->p_y * 60);
+		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.gro, mlx->p_x * 60, mlx->p_y * 60);
 		mlx->p_y --;
 		mlx->map[mlx->p_y][mlx->p_x] = 'P';
-		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img_p, mlx->p_x * 60, mlx->p_y * 60);
+		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.p_1, mlx->p_x * 60, mlx->p_y * 60);
 		mlx->nb_move += 1;
 		print_counter(mlx);
 		if (mlx->p_y + 1  == mlx->spike_y && mlx->p_x == mlx->spike_x)
@@ -59,10 +59,10 @@ void	move_a(t_mlx *mlx)
 				spike_open(mlx);
 		}
 		mlx->map[mlx->p_y][mlx->p_x] = '0';
-		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img_0, mlx->p_x * 60, mlx->p_y * 60);
+		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.gro, mlx->p_x * 60, mlx->p_y * 60);
 		mlx->p_x --;
 		mlx->map[mlx->p_y][mlx->p_x] = 'P';
-		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img_p, mlx->p_x * 60, mlx->p_y * 60);
+		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.p_1, mlx->p_x * 60, mlx->p_y * 60);
 		mlx->nb_move += 1;
 		print_counter(mlx);
 		if (mlx->p_y  == mlx->spike_y && mlx->p_x + 1 == mlx->spike_x)
@@ -83,10 +83,10 @@ void	move_s(t_mlx *mlx)
 				spike_open(mlx);
 		}
 		mlx->map[mlx->p_y][mlx->p_x] = '0';
-		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img_0, mlx->p_x * 60, mlx->p_y * 60);
+		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.gro, mlx->p_x * 60, mlx->p_y * 60);
 		mlx->p_y ++;
 		mlx->map[mlx->p_y][mlx->p_x] = 'P';
-		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img_p, mlx->p_x * 60, mlx->p_y * 60);
+		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.p_1, mlx->p_x * 60, mlx->p_y * 60);
 		mlx->nb_move += 1;
 		print_counter(mlx);
 		if (mlx->p_y - 1  == mlx->spike_y && mlx->p_x == mlx->spike_x)
@@ -107,10 +107,10 @@ void	move_d(t_mlx *mlx)
 				spike_open(mlx);
 		}
 		mlx->map[mlx->p_y][mlx->p_x] = '0';
-		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img_0, mlx->p_x * 60, mlx->p_y * 60);
+		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.gro, mlx->p_x * 60, mlx->p_y * 60);
 		mlx->p_x ++;
 		mlx->map[mlx->p_y][mlx->p_x] = 'P';
-		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img_p, mlx->p_x * 60, mlx->p_y * 60);
+		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.p_1, mlx->p_x * 60, mlx->p_y * 60);
 		mlx->nb_move += 1;
 		print_counter(mlx);
 		if (mlx->p_y  == mlx->spike_y && mlx->p_x - 1 == mlx->spike_x)

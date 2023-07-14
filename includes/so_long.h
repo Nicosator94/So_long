@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 09:39:06 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/14 01:14:10 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/15 01:04:35 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,23 @@
 # include "../minilibx-linux/mlx.h"
 # include "../minilibx-linux/mlx_int.h"
 
+typedef struct s_image
+{
+	void	*gro;
+	void	*box;
+	void	*wal;
+	void	*p_1;
+	void	*p_2;
+	void	*o_1;
+	void	*e_c;
+	void	*e_o;
+	void	*counter;
+}	t_image;
+
 typedef struct s_mlx
 {
 	void	*mlx;
 	void	*win;
-	void	*img_0;
-	void	*img_1;
-	void	*img_2;
-	void	*img_p;
-	void	*img_p_2;
-	void	*img_c;
-	void	*img_e;
-	void	*img_e_o;
-	void	*img_counter;
 	int		len_w_x;
 	int		len_w_y;
 	char	**map;
@@ -40,12 +44,8 @@ typedef struct s_mlx
 	int		spike_y;
 	int		nb_move;
 	int		timer;
+	t_image	img;
 }	t_mlx;
-
-typedef struct s_data
-{
-	int	i;
-}	t_data;
 
 char	**init_all_line(int argc, char *argv[]);
 

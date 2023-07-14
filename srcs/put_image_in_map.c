@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 15:51:22 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/12 18:13:49 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/15 01:06:15 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,17 @@ void	put_image_in_case(t_mlx *mlx, int i, int j)
 	case_y = i * 60;
 	case_x = j * 60;
 	if (mlx->map[i][j] == '0')
-		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img_0, case_x, case_y);
+		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.gro, case_x, case_y);
 	else if (mlx->map[i][j] == '1')
-		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img_1, case_x, case_y);
+		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.box, case_x, case_y);
 	else if (mlx->map[i][j] == '2')
-		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img_2, case_x, case_y);
+		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.wal, case_x, case_y);
 	else if (mlx->map[i][j] == 'P')
-		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img_p, case_x, case_y);
+		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.p_1, case_x, case_y);
 	else if (mlx->map[i][j] == 'C')
-		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img_c, case_x, case_y);
+		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.o_1, case_x, case_y);
 	else if (mlx->map[i][j] == 'E')
-		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img_e, case_x, case_y);
+		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.e_c, case_x, case_y);
 }
 
 void	put_image_in_map(t_mlx *mlx)
@@ -51,7 +51,7 @@ void	put_image_in_map(t_mlx *mlx)
 		j = 0;
 		i ++;
 	}
-	mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img_counter, 5, 5);
+	mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.counter, 5, 5);
 	mlx_string_put(mlx->mlx, mlx->win, 15, 25, 0xFFFFFF, "Number of steps :");
 	mlx_string_put(mlx->mlx, mlx->win, 15, 45, 0xFFFFFF, "Remaining Orbs :");
 	mlx_string_put(mlx->mlx, mlx->win, 120, 25, 0x2ECC71, "0");
