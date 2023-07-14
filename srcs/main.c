@@ -6,78 +6,11 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 09:42:01 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/15 01:05:31 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/15 01:23:01 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
-
-int	input(int key, t_mlx *mlx)
-{
-	if (key == XK_Escape)
-		clear_all_success(mlx);
-	if (key == 'w' || key == 'z' || key == XK_Up)
-		move_w(mlx);
-	if (key == 'a' || key == 'q' || key == XK_Left)
-		move_a(mlx);
-	if (key == 's' || key == XK_Down)
-		move_s(mlx);
-	if (key == 'd' || key == XK_Right)
-		move_d(mlx);
-	return (0);
-}
-
-void	init_map(t_mlx *mlx)
-{
-	int	x;
-	int	y;
-
-	x = ft_strlen(mlx->map[0]) - 1;
-	y = 0;
-	while (mlx->map[y] != NULL)
-		y ++;
-	mlx->len_w_x = x * 60;
-	mlx->len_w_y = y * 60;
-	if (mlx->len_w_x > 1920 || mlx->len_w_y > 1020)
-		error_len_of_map(mlx);
-}
-
-void	border_map(char **map)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	while (map[0][j] != '\n')
-		map[0][j++] = '2';
-	while (map[i + 1] != NULL)
-	{
-		map[i][0] = '2';
-		map[i][ft_strlen(map[i]) - 2] = '2';
-		i ++;
-	}
-	j = 0;
-	while (map[i][j] != '\0')
-		map[i][j++] = '2';
-}
-
-int	animation(t_mlx *mlx)
-{
-	int	x;
-	int	y;
-
-	x = mlx->p_x * 60;
-	y = mlx->p_y * 60;
-	if (mlx->timer == 0)
-		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.p_1, x, y);
-	else if (mlx->timer == 2500)
-		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.p_2, x, y);
-	mlx->timer ++;
-	if (mlx->timer > 5000)
-		mlx->timer = 0;
-	return (0);
-}
 
 int	main(int argc, char *argv[], char **env)
 {

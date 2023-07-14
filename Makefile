@@ -8,13 +8,17 @@ SOURCES = main.c \
 		init_all_line.c \
 		parsing_map.c \
 		parsing_map_2.c \
+		border_map.c \
 		check_if_possible_to_end.c \
+		init_map.c \
 		set_data.c \
 		set_img.c \
 		put_image_in_map.c \
 		replace_spike.c \
 		print_counter.c \
+		input.c \
 		move.c \
+		animation.c \
 		error.c \
 		clear_all.c
 

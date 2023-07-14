@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 09:39:06 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/15 01:04:35 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/15 01:23:33 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct s_image
 	void	*wal;
 	void	*p_1;
 	void	*p_2;
-	void	*o_1;
+	void	*o;
 	void	*e_c;
 	void	*e_o;
 	void	*counter;
@@ -50,12 +50,14 @@ typedef struct s_mlx
 char	**init_all_line(int argc, char *argv[]);
 
 void	parsing_map(char **map);
+void	border_map(char **map);
 void	error_map(char **map, int trigger);
 void	check_escape(char **map);
 void	check_player(char **map);
 void	check_collectibles(char **map);
 void	check_if_possible_to_end(char **map);
 
+void	init_map(t_mlx *mlx);
 void	set_data(t_mlx *mlx);
 
 void	check_img(char **env);
@@ -65,10 +67,14 @@ void	spike_open(t_mlx *mlx);
 void	spike_close(t_mlx *mlx, int p_x, int p_y);
 void	print_counter(t_mlx *mlx);
 
+int		input(int key, t_mlx *mlx);
+
 void	move_w(t_mlx *mlx);
 void	move_a(t_mlx *mlx);
 void	move_s(t_mlx *mlx);
 void	move_d(t_mlx *mlx);
+
+int		animation(t_mlx *mlx);
 
 int		clear_all_success(t_mlx *mlx);
 int		clear_all_failure(t_mlx *mlx);

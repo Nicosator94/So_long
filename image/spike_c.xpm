@@ -1,5 +1,5 @@
 /* XPM */
-static char * spike_test_xpm[] = {
+static char * spike_c_xpm[] = {
 "60 60 10 1",
 " 	c #53674C",
 ".	c #74776E",

@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 18:08:11 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/15 01:05:12 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/15 01:15:18 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	clear_all_success(t_mlx *mlx)
 	mlx_destroy_image(mlx->mlx, mlx->img.wal);
 	mlx_destroy_image(mlx->mlx, mlx->img.p_1);
 	mlx_destroy_image(mlx->mlx, mlx->img.p_2);
-	mlx_destroy_image(mlx->mlx, mlx->img.o_1);
+	mlx_destroy_image(mlx->mlx, mlx->img.o);
 	mlx_destroy_image(mlx->mlx, mlx->img.e_c);
 	mlx_destroy_image(mlx->mlx, mlx->img.e_o);
 	mlx_destroy_image(mlx->mlx, mlx->img.counter);
@@ -38,7 +38,7 @@ int	clear_all_failure(t_mlx *mlx)
 	mlx_destroy_image(mlx->mlx, mlx->img.wal);
 	mlx_destroy_image(mlx->mlx, mlx->img.p_1);
 	mlx_destroy_image(mlx->mlx, mlx->img.p_2);
-	mlx_destroy_image(mlx->mlx, mlx->img.o_1);
+	mlx_destroy_image(mlx->mlx, mlx->img.o);
 	mlx_destroy_image(mlx->mlx, mlx->img.e_c);
 	mlx_destroy_image(mlx->mlx, mlx->img.e_o);
 	mlx_destroy_image(mlx->mlx, mlx->img.counter);
