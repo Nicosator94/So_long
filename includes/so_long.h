@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 09:39:06 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/15 02:55:13 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/15 03:06:40 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ typedef struct s_mlx
 	char	**map;
 	int		p_x;
 	int		p_y;
-	int		collectibles;
+	int		collec;
 	int		spike_x;
 	int		spike_y;
 	int		nb_move;

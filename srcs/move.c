@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 08:43:12 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/15 02:38:48 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/15 03:08:05 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	try_escape(t_mlx *mlx)
 {
-	if (mlx->collectibles == 0)
+	if (mlx->collec == 0)
 	{
 		mlx->nb_move += 1;
 		ft_printf("Congrats, you win with only %d steps !\n", mlx->nb_move);
@@ -30,8 +30,8 @@ void	move_w(t_mlx *mlx)
 			try_escape(mlx);
 		if (mlx->map[mlx->p_y - 1][mlx->p_x] == 'C')
 		{
-			mlx->collectibles --;
-			if (mlx->collectibles == 0)
+			mlx->collec --;
+			if (mlx->collec == 0)
 				spike_open(mlx);
 		}
 		mlx->map[mlx->p_y][mlx->p_x] = '0';
@@ -54,8 +54,8 @@ void	move_a(t_mlx *mlx)
 			try_escape(mlx);
 		if (mlx->map[mlx->p_y][mlx->p_x - 1] == 'C')
 		{
-			mlx->collectibles --;
-			if (mlx->collectibles == 0)
+			mlx->collec --;
+			if (mlx->collec == 0)
 				spike_open(mlx);
 		}
 		mlx->map[mlx->p_y][mlx->p_x] = '0';
@@ -78,8 +78,8 @@ void	move_s(t_mlx *mlx)
 			try_escape(mlx);
 		if (mlx->map[mlx->p_y + 1][mlx->p_x] == 'C')
 		{
-			mlx->collectibles --;
-			if (mlx->collectibles == 0)
+			mlx->collec --;
+			if (mlx->collec == 0)
 				spike_open(mlx);
 		}
 		mlx->map[mlx->p_y][mlx->p_x] = '0';
@@ -102,8 +102,8 @@ void	move_d(t_mlx *mlx)
 			try_escape(mlx);
 		if (mlx->map[mlx->p_y][mlx->p_x + 1] == 'C')
 		{
-			mlx->collectibles --;
-			if (mlx->collectibles == 0)
+			mlx->collec --;
+			if (mlx->collec == 0)
 				spike_open(mlx);
 		}
 		mlx->map[mlx->p_y][mlx->p_x] = '0';

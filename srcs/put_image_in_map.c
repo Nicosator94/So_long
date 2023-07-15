@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 15:51:22 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/15 01:16:17 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/15 03:07:09 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	put_image_in_map(t_mlx *mlx)
 	mlx_string_put(mlx->mlx, mlx->win, 15, 25, 0xFFFFFF, "Number of steps :");
 	mlx_string_put(mlx->mlx, mlx->win, 15, 45, 0xFFFFFF, "Remaining Orbs :");
 	mlx_string_put(mlx->mlx, mlx->win, 120, 25, 0x2ECC71, "0");
-	nb = ft_itoa(mlx->collectibles);
+	nb = ft_itoa(mlx->collec);
 	if (nb == NULL)
 		error_malloc_all(mlx);
 	mlx_string_put(mlx->mlx, mlx->win, 120, 45, 0xF39C12, nb);

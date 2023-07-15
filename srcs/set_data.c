@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 07:32:19 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/15 02:55:09 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/15 03:06:58 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,13 @@ void	count_collectibles(t_mlx *mlx)
 
 	i = 1;
 	j = 1;
-	mlx->collectibles = 0;
+	mlx->collec = 0;
 	while (mlx->map[i] != NULL)
 	{
 		while (mlx->map[i][j] != '\0')
 		{
 			if (mlx->map[i][j] == 'C')
-				mlx->collectibles += 1;
+				mlx->collec += 1;
 			j ++;
 		}
 		j = 1;

@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 01:17:20 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/15 03:05:13 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/15 03:10:01 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ int	animation(t_mlx *mlx)
 		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.p_3, p_x, p_y);
 	if (!(p_x == s_x && p_y == s_y))
 	{
-		if (mlx->timer == 0 && mlx->collectibles != 0)
-			mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.e_c, s_x, s_y);
-		else if (mlx->timer == 3500 && mlx->collectibles != 0)
+		if (mlx->timer == 0 && mlx->collec != 0)
 			mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.e_o, s_x, s_y);
+		else if (mlx->timer == 3500 && mlx->collec != 0)
+			mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.e_c, s_x, s_y);
 	}
 	if (mlx->timer++ > 4500)
 		mlx->timer = 0;
