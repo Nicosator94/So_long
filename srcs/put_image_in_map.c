@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 15:51:22 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/15 03:07:09 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/15 21:57:23 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,23 @@
 
 void	put_image_in_case(t_mlx *mlx, int i, int j)
 {
-	int	case_x;
-	int	case_y;
+	int	x;
+	int	y;
 
-	case_y = i * 60;
-	case_x = j * 60;
+	y = i * 60;
+	x = j * 60;
 	if (mlx->map[i][j] == '0')
-		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.gro, case_x, case_y);
+		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.gro, x, y);
 	else if (mlx->map[i][j] == '1')
-		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.box, case_x, case_y);
+		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.box, x, y);
 	else if (mlx->map[i][j] == '2')
-		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.wal, case_x, case_y);
+		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.wal, x, y);
 	else if (mlx->map[i][j] == 'P')
-		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.p_1, case_x, case_y);
+		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.p_1, x, y);
 	else if (mlx->map[i][j] == 'C')
-		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.o, case_x, case_y);
+		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.o, x, y);
 	else if (mlx->map[i][j] == 'E')
-		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.e_c, case_x, case_y);
+		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.e_c, x, y);
 }
 
 void	put_image_in_map(t_mlx *mlx)
