@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 08:40:17 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/12 09:44:37 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/15 03:19:57 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,7 @@ char	**get_line(char *file_name)
 	{
 		ft_putstr_fd("Error\n", 2);
 		ft_putstr_fd("The file did not open !\n", 2);
+		ft_putstr_fd("File doesn't exist or permission denied !\n", 2);
 		exit(EXIT_FAILURE);
 	}
 	temp_list = init_temp_list(map);

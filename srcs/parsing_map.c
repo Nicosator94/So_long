@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 19:16:43 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/12 09:46:59 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/15 03:32:27 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,16 @@ void	error_map(char **map, int trigger)
 	else if (trigger == 5)
 		ft_putstr_fd("The map contains invalid characters !\n", 2);
 	else if (trigger == 6)
-		ft_putstr_fd("The map contains insufficient exits !\n", 2);
+		ft_putstr_fd("The map does not contain any escape !\n", 2);
 	else if (trigger == 7)
-		ft_putstr_fd("The map contains insufficient player spawn !\n", 2);
+		ft_putstr_fd("The map contains too much escapes !\n", 2);
 	else if (trigger == 8)
-		ft_putstr_fd("The map does not contain any collectibles !\n", 2);
+		ft_putstr_fd("The map does not contain any spawn !\n", 2);
 	else if (trigger == 9)
+		ft_putstr_fd("The map contains too much spawns !\n", 2);
+	else if (trigger == 10)
+		ft_putstr_fd("The map does not contain any collectibles !\n", 2);
+	else if (trigger == 11)
 		ft_putstr_fd("The map can't be finished !\n", 2);
 	free_mat(map);
 	exit(EXIT_FAILURE);

@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 13:13:14 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/10 13:38:20 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/15 03:33:30 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,10 @@ void	check_escape(char **map)
 		j = 0;
 		i ++;
 	}
-	if (count_e != 1)
+	if (count_e < 1)
 		error_map(map, 6);
+	else if (count_e > 1)
+		error_map(map, 7);
 }
 
 void	check_player(char **map)
@@ -56,8 +58,10 @@ void	check_player(char **map)
 		j = 0;
 		i ++;
 	}
-	if (count_p != 1)
-		error_map(map, 7);
+	if (count_p < 1)
+		error_map(map, 8);
+	else if (count_p > 1)
+		error_map(map, 9);
 }
 
 void	check_collectibles(char **map)
@@ -81,5 +85,5 @@ void	check_collectibles(char **map)
 		i ++;
 	}
 	if (count_c < 1)
-		error_map(map, 8);
+		error_map(map, 10);
 }

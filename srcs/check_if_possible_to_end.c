@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 13:39:01 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/11 07:59:39 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/15 03:31:32 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	check_end(char **temp, char **map)
 			if (temp[i][j] == 'C' || temp[i][j] == 'E')
 			{
 				free_mat(temp);
-				error_map(map, 9);
+				error_map(map, 11);
 			}
 			j ++;
 		}
