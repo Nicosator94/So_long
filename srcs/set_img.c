@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 15:57:55 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/15 01:15:40 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/15 02:15:35 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ void	set_img(t_mlx *mlx)
 	mlx->img.p_1 = mlx_xpm_file_to_image(mlx->mlx, path, &x, &y);
 	path = "./image/neon_2.xpm";
 	mlx->img.p_2 = mlx_xpm_file_to_image(mlx->mlx, path, &x, &y);
+	path = "./image/neon_3.xpm";
+	mlx->img.p_3 = mlx_xpm_file_to_image(mlx->mlx, path, &x, &y);
 	path = "./image/orb.xpm";
 	mlx->img.o = mlx_xpm_file_to_image(mlx->mlx, path, &x, &y);
 	path = "./image/spike_c.xpm";

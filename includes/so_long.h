@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 09:39:06 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/15 01:23:33 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/15 02:14:20 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct s_image
 	void	*wal;
 	void	*p_1;
 	void	*p_2;
+	void	*p_3;
 	void	*o;
 	void	*e_c;
 	void	*e_o;

@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 06:55:26 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/15 01:15:26 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/15 02:14:45 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void	check_img(char **env)
 	trigger = check_one_by_one("./image/wall.xpm", trigger);
 	trigger = check_one_by_one("./image/neon_1.xpm", trigger);
 	trigger = check_one_by_one("./image/neon_2.xpm", trigger);
+	trigger = check_one_by_one("./image/neon_3.xpm", trigger);
 	trigger = check_one_by_one("./image/orb.xpm", trigger);
 	trigger = check_one_by_one("./image/spike_c.xpm", trigger);
 	trigger = check_one_by_one("./image/spike_o.xpm", trigger);
