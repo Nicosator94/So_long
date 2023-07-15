@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 01:17:20 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/15 03:10:01 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/15 03:14:21 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	animation(t_mlx *mlx)
 	s_y = mlx->spike_y * 60;
 	if (mlx->timer == 0)
 		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.p_1, p_x, p_y);
-	else if (mlx->timer == 1500)
+	else if (mlx->timer == 1500 || mlx->timer == 4500)
 		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.p_2, p_x, p_y);
 	else if (mlx->timer == 3000)
 		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.p_3, p_x, p_y);
@@ -33,10 +33,10 @@ int	animation(t_mlx *mlx)
 	{
 		if (mlx->timer == 0 && mlx->collec != 0)
 			mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.e_o, s_x, s_y);
-		else if (mlx->timer == 3500 && mlx->collec != 0)
+		else if (mlx->timer == 3000 && mlx->collec != 0)
 			mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.e_c, s_x, s_y);
 	}
-	if (mlx->timer++ > 4500)
+	if (mlx->timer++ > 6000)
 		mlx->timer = 0;
 	return (0);
 }
