@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 09:39:06 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/16 14:38:12 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/16 14:53:33 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	move_s(t_mlx *mlx);
 void	move_d(t_mlx *mlx);
 
 int		animation(t_mlx *mlx);
-void	check_mob(t_mlx *mlx);
+void	check_mob(t_mlx *mlx, int trigger_y, int trigger_x);
 
 int		clear_all_success(t_mlx *mlx);
 int		clear_all_failure(t_mlx *mlx);

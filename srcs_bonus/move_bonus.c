@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 08:43:12 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/16 14:32:35 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/16 15:10:11 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	try_escape(t_mlx *mlx)
 void	move_w(t_mlx *mlx)
 {
 	if (mlx->map[mlx->p_y - 1][mlx->p_x] == 'M')
-		check_mob(mlx);
+		check_mob(mlx, -1, 0);
 	else if (mlx->map[mlx->p_y - 1][mlx->p_x] == '0' ||
 		mlx->map[mlx->p_y - 1][mlx->p_x] == 'C' ||
 		mlx->map[mlx->p_y - 1][mlx->p_x] == 'E')
@@ -34,7 +34,7 @@ void	move_w(t_mlx *mlx)
 			try_escape(mlx);
 		if (mlx->map[mlx->p_y - 1][mlx->p_x] == 'C')
 		{
-			if (mlx->collec-- == 0)
+			if (mlx->collec-- == 1)
 				spike_open(mlx);
 		}
 		mlx->map[mlx->p_y][mlx->p_x] = '0';
@@ -54,7 +54,7 @@ void	move_w(t_mlx *mlx)
 void	move_a(t_mlx *mlx)
 {
 	if (mlx->map[mlx->p_y][mlx->p_x - 1] == 'M')
-		check_mob(mlx);
+		check_mob(mlx, 0 ,-1);
 	else if (mlx->map[mlx->p_y][mlx->p_x - 1] == '0' ||
 		mlx->map[mlx->p_y][mlx->p_x - 1] == 'C' ||
 		mlx->map[mlx->p_y][mlx->p_x - 1] == 'E')
@@ -63,7 +63,7 @@ void	move_a(t_mlx *mlx)
 			try_escape(mlx);
 		if (mlx->map[mlx->p_y][mlx->p_x - 1] == 'C')
 		{
-			if (mlx->collec-- == 0)
+			if (mlx->collec-- == 1)
 				spike_open(mlx);
 		}
 		mlx->map[mlx->p_y][mlx->p_x] = '0';
@@ -83,7 +83,7 @@ void	move_a(t_mlx *mlx)
 void	move_s(t_mlx *mlx)
 {
 	if (mlx->map[mlx->p_y + 1][mlx->p_x] == 'M')
-		check_mob(mlx);
+		check_mob(mlx, 1, 0);
 	else if (mlx->map[mlx->p_y + 1][mlx->p_x] == '0' ||
 		mlx->map[mlx->p_y + 1][mlx->p_x] == 'C' ||
 		mlx->map[mlx->p_y + 1][mlx->p_x] == 'E')
@@ -92,7 +92,7 @@ void	move_s(t_mlx *mlx)
 			try_escape(mlx);
 		if (mlx->map[mlx->p_y + 1][mlx->p_x] == 'C')
 		{
-			if (mlx->collec-- == 0)
+			if (mlx->collec-- == 1)
 				spike_open(mlx);
 		}
 		mlx->map[mlx->p_y][mlx->p_x] = '0';
@@ -112,7 +112,7 @@ void	move_s(t_mlx *mlx)
 void	move_d(t_mlx *mlx)
 {
 	if (mlx->map[mlx->p_y][mlx->p_x + 1] == 'M')
-		check_mob(mlx);
+		check_mob(mlx, 0, 1);
 	else if (mlx->map[mlx->p_y][mlx->p_x + 1] == '0' ||
 		mlx->map[mlx->p_y][mlx->p_x + 1] == 'C' ||
 		mlx->map[mlx->p_y][mlx->p_x + 1] == 'E')
@@ -121,7 +121,7 @@ void	move_d(t_mlx *mlx)
 			try_escape(mlx);
 		if (mlx->map[mlx->p_y][mlx->p_x + 1] == 'C')
 		{
-			if (mlx->collec-- == 0)
+			if (mlx->collec-- == 1)
 				spike_open(mlx);
 		}
 		mlx->map[mlx->p_y][mlx->p_x] = '0';
