@@ -40,6 +40,7 @@ SOURCES_BONUS = main_bonus.c \
 		input_bonus.c \
 		move_bonus.c \
 		animation_bonus.c \
+		check_mob_bonus.c \
 		error_bonus.c \
 		clear_all_bonus.c
 

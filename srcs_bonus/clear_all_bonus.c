@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 18:08:11 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/16 12:49:59 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/16 14:38:49 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int	clear_all_success(t_mlx *mlx)
 	mlx_destroy_image(mlx->mlx, mlx->img.e_c);
 	mlx_destroy_image(mlx->mlx, mlx->img.e_o);
 	mlx_destroy_image(mlx->mlx, mlx->img.counter);
+	mlx_destroy_image(mlx->mlx, mlx->img.mob);
+	mlx_destroy_image(mlx->mlx, mlx->img.death);
 	mlx_destroy_window(mlx->mlx, mlx->win);
 	mlx_destroy_display(mlx->mlx);
 	free(mlx->mlx);
@@ -44,6 +46,8 @@ int	clear_all_failure(t_mlx *mlx)
 	mlx_destroy_image(mlx->mlx, mlx->img.e_c);
 	mlx_destroy_image(mlx->mlx, mlx->img.e_o);
 	mlx_destroy_image(mlx->mlx, mlx->img.counter);
+	mlx_destroy_image(mlx->mlx, mlx->img.mob);
+	mlx_destroy_image(mlx->mlx, mlx->img.death);
 	mlx_destroy_window(mlx->mlx, mlx->win);
 	mlx_destroy_display(mlx->mlx);
 	free(mlx->mlx);

@@ -6,11 +6,19 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 15:57:55 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/16 12:52:17 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/16 14:41:34 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long_bonus.h"
+
+void	more_img(t_mlx *mlx, char *path, int x, int y)
+{
+	path = "./image/mob.xpm";
+	mlx->img.mob = mlx_xpm_file_to_image(mlx->mlx, path, &x, &y);
+	path = "./image/death.xpm";
+	mlx->img.death = mlx_xpm_file_to_image(mlx->mlx, path, &x, &y);
+}
 
 void	set_img(t_mlx *mlx)
 {
@@ -38,4 +46,5 @@ void	set_img(t_mlx *mlx)
 	mlx->img.e_o = mlx_xpm_file_to_image(mlx->mlx, path, &x, &y);
 	path = "./image/counter.xpm";
 	mlx->img.counter = mlx_xpm_file_to_image(mlx->mlx, path, &x, &y);
+	more_img(mlx, path, x, y);
 }

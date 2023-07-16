@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 06:55:26 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/16 12:49:47 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/16 14:37:49 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ void	check_img(char **env)
 	trigger = check_one_by_one("./image/spike_c.xpm", trigger);
 	trigger = check_one_by_one("./image/spike_o.xpm", trigger);
 	trigger = check_one_by_one("./image/counter.xpm", trigger);
+	trigger = check_one_by_one("./image/death.xpm", trigger);
+	trigger = check_one_by_one("./image/mob.xpm", trigger);
 	if (trigger == 1)
 		exit(EXIT_FAILURE);
 }

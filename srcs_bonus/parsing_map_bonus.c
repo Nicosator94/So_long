@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 19:16:43 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/16 12:51:28 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/16 14:03:08 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,8 @@ void	check_invalid_character(char **map)
 		while (map[i][j] != '\0')
 		{
 			if (map[i][j] != '0' && map[i][j] != '1' && map[i][j] != 'P'
-				&& map[i][j] != 'C' && map[i][j] != 'E' && map[i][j] != '\n')
+				&& map[i][j] != 'C' && map[i][j] != 'E' && map[i][j] != 'M'
+				&& map[i][j] != '\n')
 				error_map(map, 5);
 			j ++;
 		}

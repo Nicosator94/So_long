@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 09:39:06 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/16 12:48:55 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/16 14:38:12 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ typedef struct s_image
 	void	*e_c;
 	void	*e_o;
 	void	*counter;
+	void	*mob;
+	void	*death;
 }	t_image;
 
 typedef struct s_mlx
@@ -76,6 +78,7 @@ void	move_s(t_mlx *mlx);
 void	move_d(t_mlx *mlx);
 
 int		animation(t_mlx *mlx);
+void	check_mob(t_mlx *mlx);
 
 int		clear_all_success(t_mlx *mlx);
 int		clear_all_failure(t_mlx *mlx);

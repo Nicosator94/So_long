@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   input_bonus.c                                      :+:      :+:    :+:   */
+/*   check_mob_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/15 01:22:05 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/16 14:27:39 by niromano         ###   ########.fr       */
+/*   Created: 2023/07/16 14:31:51 by niromano          #+#    #+#             */
+/*   Updated: 2023/07/16 14:38:31 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long_bonus.h"
 
-int	input(int key, t_mlx *mlx)
+void	check_mob(t_mlx *mlx)
 {
-	if (key == XK_Escape)
-		clear_all_success(mlx);
-	if (mlx->map[mlx->p_y][mlx->p_x] == 'P')
-	{
-		if (key == 'w' || key == 'z' || key == XK_Up)
-			move_w(mlx);
-		if (key == 'a' || key == 'q' || key == XK_Left)
-			move_a(mlx);
-		if (key == 's' || key == XK_Down)
-			move_s(mlx);
-		if (key == 'd' || key == XK_Right)
-			move_d(mlx);
-	}
-	return (0);
+	mlx->map[mlx->p_y][mlx->p_x] = 'X';
+	mlx_put_image_to_window(mlx->mlx, mlx->win,
+		mlx->img.death, mlx->p_x * 60, mlx->p_y * 60);
+	ft_printf("You died !\n");
+	ft_printf("You can leave and retry !\n");
 }

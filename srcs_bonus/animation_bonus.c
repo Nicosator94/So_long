@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 01:17:20 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/16 12:49:06 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/16 14:23:27 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ int	animation(t_mlx *mlx)
 	py = mlx->p_y * 60;
 	sx = mlx->spike_x * 60;
 	sy = mlx->spike_y * 60;
-	if (mlx->timer == 0)
+	if (mlx->timer == 0 && mlx->map[mlx->p_y][mlx->p_x] == 'P')
 		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.p_1, px, py);
-	else if (mlx->timer == 2500 || mlx->timer == 7500)
+	else if ((mlx->timer == 2500 || mlx->timer == 7500) && mlx->map[mlx->p_y][mlx->p_x] == 'P')
 		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.p_2, px, py);
-	else if (mlx->timer == 5000)
+	else if (mlx->timer == 5000 && mlx->map[mlx->p_y][mlx->p_x] == 'P')
 		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.p_3, px, py);
 	if (!(px == sx && py == sy))
 	{

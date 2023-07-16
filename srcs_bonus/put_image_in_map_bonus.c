@@ -6,7 +6,7 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 15:51:22 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/16 12:51:46 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/16 14:03:32 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ void	put_image_in_case(t_mlx *mlx, int i, int j)
 		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.o, x, y);
 	else if (mlx->map[i][j] == 'E')
 		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.e_c, x, y);
+	else if (mlx->map[i][j] == 'M')
+		mlx_put_image_to_window(mlx->mlx, mlx->win, mlx->img.mob, x, y);
 }
 
 void	put_image_in_map(t_mlx *mlx)
