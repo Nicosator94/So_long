@@ -6,12 +6,12 @@
 /*   By: niromano <niromano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 09:39:06 by niromano          #+#    #+#             */
-/*   Updated: 2023/07/16 14:53:33 by niromano         ###   ########.fr       */
+/*   Updated: 2023/07/18 10:59:09 by niromano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#ifndef SO_LONG_BONUS_H
+# define SO_LONG_BONUS_H
 
 # include "../libft/libft.h"
 # include "../minilibx-linux/mlx.h"
