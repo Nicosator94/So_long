@@ -83,13 +83,13 @@ bonus : $(NAME_BONUS)
 $(NAME) : $(OBJS)
 	@make -sC libft
 	@make -sC minilibx-linux
-	$(CC) $(CFLAGS) $(INCLUDES) -o $(NAME) $(OBJS) ./libft/libft.a ./minilibx-linux/libmlx_Linux.a -lXext -lX11
+	@$(CC) $(CFLAGS) $(INCLUDES) -o $(NAME) $(OBJS) ./libft/libft.a ./minilibx-linux/libmlx_Linux.a -lXext -lX11
 	@echo "Compilation completed"
 
 $(NAME_BONUS) : $(OBJS_BONUS)
 	@make -sC libft
 	@make -sC minilibx-linux
-	$(CC) $(CFLAGS) $(INCLUDES_BONUS) -o $(NAME_BONUS) $(OBJS_BONUS) ./libft/libft.a ./minilibx-linux/libmlx_Linux.a -lXext -lX11
+	@$(CC) $(CFLAGS) $(INCLUDES_BONUS) -o $(NAME_BONUS) $(OBJS_BONUS) ./libft/libft.a ./minilibx-linux/libmlx_Linux.a -lXext -lX11
 	@echo "Compilation completed"
 
 $(DIR)%.o : $(SRC)%.c | $(DIR)
